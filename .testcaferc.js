@@ -1,3 +1,6 @@
 module.exports = {
-    "src": "tests"
-}
+  src: "tests",
+  screenshots: {
+    path: "./reports/screenshots",
+  },
+};
