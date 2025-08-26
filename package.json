@@ -8,6 +8,7 @@
     "url": "https://github.com/DevExpress/testcafe/issues"
   },
   "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "testcafe": "*"
   }
 }
