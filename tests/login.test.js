@@ -10,5 +10,10 @@ test("Fill login input", async (t) => {
     .eql("tomsmith")
     .typeText(pom.password, "SuperSecretPassword!")
     .expect(pom.password.value)
-    .eql("SuperSecretPassword!");
+    .eql("SuperSecretPassword!")
+    .click(pom.submitButton);
+
+  await t
+    .expect(pom.flashContainer.innerText)
+    .contains("You logged into a secure area!");
 });
