@@ -16,4 +16,6 @@ test("Fill login input", async (t) => {
   await t
     .expect(pom.flashContainer.innerText)
     .contains("You logged into a secure area!");
+
+  await t.takeScreenshot("login-success.png");
 });
