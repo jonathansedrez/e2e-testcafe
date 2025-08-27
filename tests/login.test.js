@@ -1,3 +1,5 @@
+import { Selector } from "testcafe";
+
 import pom from "../pages/LoginPage";
 
 fixture`A base form filling test`
@@ -6,6 +8,24 @@ fixture`A base form filling test`
 test("Fill login input", async (t) => {
   await t
     .typeText(pom.firstName, "tomsmith")
+    .expect(pom.firstName.value)
+    .eql("tomsmith")
+    .typeText(pom.password, "SuperSecretPassword!")
+    .expect(pom.password.value)
+    .eql("SuperSecretPassword!")
+    .click(pom.submitButton);
+
+  await t
+    .expect(pom.flashContainer.innerText)
+    .contains("You logged into a secure area!");
+
+  await t.takeScreenshot("login-success.png");
+});
+
+test("Test with debug", async (t) => {
+  await t
+    .typeText(pom.firstName, "tomsmith")
+    .debug(Selector("h1"))
     .expect(pom.firstName.value)
     .eql("tomsmith")
     .typeText(pom.password, "SuperSecretPassword!")
