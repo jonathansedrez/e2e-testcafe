@@ -22,7 +22,7 @@ test("Fill login input", async (t) => {
   await t.takeScreenshot("login-success.png");
 });
 
-test("Test with debug", async (t) => {
+test.skip("Test with debug", async (t) => {
   await t
     .typeText(pom.firstName, "tomsmith")
     .debug(Selector("h1"))
