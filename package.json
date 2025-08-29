@@ -9,7 +9,7 @@
   },
   "scripts": {
     "docker:build": "docker build --platform linux/amd64 -t my-testcafe .",
-    "docker:run": "docker run --rm --platform linux/amd64 -v $PWD:/tests -v $PWD/reports:/tests/reports my-testcafe \"chromium:headless\" /tests/tests --screenshots /tests/reports/screenshots --video /tests/reports/videos"
+    "docker:run": "docker run --rm --platform linux/amd64 -v $PWD:/tests -v $PWD/reports:/tests/reports my-testcafe \"chromium:headless\" /tests/tests --screenshots /tests/reports/screenshots"
   },
   "devDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
